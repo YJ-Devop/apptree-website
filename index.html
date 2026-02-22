@@ -1,222 +1,380 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>App Tree Solution | AI, Automation & IoT Experts</title>
+  <title>App Tree Solution | AI, Automation & IoT Experts</title>
 
-<!-- SEO Optimization -->
-<meta name="description" content="App Tree Solution provides AI, Automation, IoT, Mobile App and Web Development services. We build smart digital systems for modern businesses.">
-<meta name="keywords" content="AI company India, IoT solutions, Automation systems, Mobile app development, Supabase, ESP32, React Native">
-<meta name="author" content="App Tree Solution">
-<meta property="og:title" content="App Tree Solution - AI & Automation Experts">
-<meta property="og:description" content="We build AI, IoT and Smart Automation Systems.">
-<meta property="og:type" content="website">
+  <meta name="description" content="App Tree Solution provides AI, Automation, IoT, Mobile App and Web Development services. We build smart digital systems for modern businesses.">
+  <meta name="keywords" content="AI company India, IoT solutions, Automation systems, Mobile app development, Supabase, ESP32, React Native">
+  <meta name="author" content="App Tree Solution">
+  
+  <meta property="og:title" content="App Tree Solution - AI & Automation Experts">
+  <meta property="og:description" content="We build AI, IoT and Smart Automation Systems for the modern era.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://apptreesolution.com">
 
-<script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-<style>
-body {
-  margin:0;
-  font-family: 'Segoe UI', sans-serif;
-  background:#0f0f1b;
-  color:white;
-  scroll-behavior:smooth;
-}
+  <style>
+    :root {
+      --primary: #00f5ff;
+      --secondary: #00ff99;
+      --bg-dark: #07070e;
+      --card-bg: rgba(255, 255, 255, 0.05);
+      --glass-border: rgba(255, 255, 255, 0.1);
+    }
 
-#tsparticles {
-  position:fixed;
-  width:100%;
-  height:100%;
-  z-index:-1;
-}
+    * { box-sizing: border-box; }
 
-nav {
-  position:fixed;
-  width:100%;
-  background:rgba(0,0,0,0.7);
-  backdrop-filter: blur(10px);
-  padding:15px 0;
-  text-align:center;
-  z-index:1000;
-}
+    body {
+      margin: 0;
+      font-family: 'Inter', 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg-dark);
+      color: white;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
 
-nav a {
-  color:#00f5ff;
-  margin:0 20px;
-  text-decoration:none;
-  font-weight:bold;
-}
+    #tsparticles {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
 
-header {
-  height:100vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-}
+    /* --- Navigation --- */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(7, 7, 14, 0.8);
+      backdrop-filter: blur(15px);
+      padding: 15px 0;
+      text-align: center;
+      z-index: 1000;
+      border-bottom: 1px solid var(--glass-border);
+    }
 
-header h1 {
-  font-size:50px;
-  font-weight:bold;
-}
+    nav a {
+      color: #fff;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      transition: 0.3s;
+      text-transform: uppercase;
+    }
 
-header h1 span:first-child { color:#00f5ff; }
-header h1 span:nth-child(2) { color:#00ff99; }
+    nav a:hover { color: var(--primary); }
 
-header p {
-  font-size:20px;
-  color:#ccc;
-}
+    /* --- Header / Hero --- */
+    header {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+    }
 
-.btn {
-  margin-top:20px;
-  padding:12px 30px;
-  border:none;
-  border-radius:30px;
-  background:linear-gradient(90deg,#00f5ff,#00ff99);
-  color:black;
-  font-weight:bold;
-  cursor:pointer;
-  transition:0.3s;
-}
+    header h1 {
+      font-size: clamp(2.5rem, 8vw, 4.5rem);
+      margin-bottom: 10px;
+      letter-spacing: -1px;
+    }
 
-.btn:hover {
-  box-shadow:0 0 20px #00ffcc;
-  transform:scale(1.05);
-}
+    header h1 span.blue { color: var(--primary); text-shadow: 0 0 20px rgba(0,245,255,0.3); }
+    header h1 span.green { color: var(--secondary); text-shadow: 0 0 20px rgba(0,255,153,0.3); }
 
-section {
-  padding:100px 20px;
-  text-align:center;
-}
+    header p {
+      font-size: clamp(1rem, 3vw, 1.4rem);
+      color: #aaa;
+      max-width: 700px;
+      line-height: 1.6;
+    }
 
-.card {
-  display:inline-block;
-  width:260px;
-  margin:20px;
-  padding:25px;
-  border-radius:15px;
-  background:rgba(255,255,255,0.05);
-  transition:0.3s;
-}
+    /* --- Buttons --- */
+    .btn {
+      margin-top: 30px;
+      padding: 15px 40px;
+      border: none;
+      border-radius: 50px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      color: #000;
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      text-decoration: none;
+      display: inline-block;
+    }
 
-.card:hover {
-  transform:translateY(-10px);
-  box-shadow:0 0 20px #00ffcc;
-}
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 30px rgba(0, 255, 204, 0.4);
+    }
 
-input, textarea {
-  width:80%;
-  padding:12px;
-  margin:10px 0;
-  border:none;
-  border-radius:8px;
-}
+    /* --- Sections Shared --- */
+    section {
+      padding: 120px 10%;
+      max-width: 1200px;
+      margin: 0 auto;
+      scroll-margin-top: 80px; /* Fixes overlap with nav */
+    }
 
-footer {
-  padding:30px;
-  text-align:center;
-  background:#0a0a14;
-  color:#888;
-}
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 50px;
+      text-align: center;
+      background: linear-gradient(to right, #fff, #888);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
 
-/* WhatsApp Button */
-.whatsapp {
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  background:#25D366;
-  color:white;
-  padding:15px;
-  border-radius:50%;
-  font-size:22px;
-  text-decoration:none;
-  box-shadow:0 0 15px #25D366;
-}
-</style>
+    /* --- Cards (Services & Portfolio) --- */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--glass-border);
+      padding: 40px 30px;
+      border-radius: 20px;
+      backdrop-filter: blur(5px);
+      transition: 0.4s;
+      text-align: left;
+    }
+
+    .card i {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      display: block;
+      background: linear-gradient(45deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .card:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: var(--primary);
+      transform: translateY(-10px);
+    }
+
+    .card h3 { margin: 15px 0; font-size: 1.4rem; }
+    .card p { color: #aaa; line-height: 1.6; }
+
+    /* --- Contact Form --- */
+    .contact-container {
+      max-width: 600px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      padding: 40px;
+      border-radius: 24px;
+      border: 1px solid var(--glass-border);
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 15px;
+      margin-bottom: 20px;
+      background: rgba(0,0,0,0.3);
+      border: 1px solid var(--glass-border);
+      border-radius: 12px;
+      color: white;
+      font-size: 1rem;
+    }
+
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
+
+    .hidden { display: none; }
+
+    /* --- Footer --- */
+    footer {
+      padding: 60px 20px;
+      text-align: center;
+      border-top: 1px solid var(--glass-border);
+      background: #05050a;
+      color: #666;
+    }
+
+    /* --- WhatsApp --- */
+    .whatsapp {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #25D366;
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      text-decoration: none;
+      box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+      z-index: 1000;
+      transition: 0.3s;
+    }
+
+    .whatsapp:hover { transform: scale(1.1) rotate(10deg); }
+
+    @media (max-width: 768px) {
+      section { padding: 80px 20px; }
+      nav a { margin: 0 8px; font-size: 0.8rem; }
+    }
+  </style>
 </head>
 
 <body>
 
-<div id="tsparticles"></div>
+  <div id="tsparticles"></div>
 
-<nav>
-  <a href="#home">Home</a>
-  <a href="#services">Services</a>
-  <a href="#portfolio">Portfolio</a>
-  <a href="#contact">Contact</a>
-</nav>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-<header id="home">
-  <h1><span>App</span> <span>Tree</span> Solution</h1>
-  <p>AI | Automation | IoT | Mobile Apps | Web Development</p>
-  <a href="#contact"><button class="btn">Get Free Consultation</button></a>
-</header>
+  <header id="home">
+    <h1><span class="blue">App</span> <span class="green">Tree</span> Solution</h1>
+    <p>We architect future-ready digital ecosystems using Artificial Intelligence, IoT, and high-performance Cloud Automation.</p>
+    <a href="#contact" class="btn">Get Free Consultation</a>
+  </header>
 
-<section id="services">
-  <h2>Our Services</h2>
-  <div class="card">🤖 Artificial Intelligence</div>
-  <div class="card">⚙️ Automation Systems</div>
-  <div class="card">🌐 IoT Solutions</div>
-  <div class="card">📱 Mobile Applications</div>
-  <div class="card">💻 Web Development</div>
-</section>
+  <section id="services">
+    <h2>Core Expertise</h2>
+    <div class="grid">
+      <div class="card">
+        <i class="fas fa-brain"></i>
+        <h3>Artificial Intelligence</h3>
+        <p>Custom NLP, predictive modeling, and AI-driven workflow optimization.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-microchip"></i>
+        <h3>IoT Solutions</h3>
+        <p>Smart hardware integration with ESP32, MQTT, and real-time dashboards.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-robot"></i>
+        <h3>Process Automation</h3>
+        <p>Industrial PLC systems and cloud-based remote device management.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-mobile-alt"></i>
+        <h3>Mobile Apps</h3>
+        <p>Cross-platform React Native apps powered by Supabase backends.</p>
+      </div>
+    </div>
+  </section>
 
-<section id="portfolio">
-  <h2>Our Projects</h2>
+  <section id="portfolio">
+    <h2>Featured Projects</h2>
+    <div class="grid">
+      <div class="card">
+        <i class="fas fa-coffee"></i>
+        <h3>IoT Vending System</h3>
+        <p>Real-time inventory and remote dispense control using Supabase & MQTT.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-calendar-check"></i>
+        <h3>AI Events Engine</h3>
+        <p>Intelligent event discovery platform with natural language search capabilities.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-industry"></i>
+        <h3>Smart Factory PLC</h3>
+        <p>Web-linked industrial automation for monitoring production metrics remotely.</p>
+      </div>
+    </div>
+  </section>
 
-  <div class="card">
-    <h3>IoT Vending Machine</h3>
-    <p>ESP32 + MQTT + Supabase real-time vending control system.</p>
-  </div>
+  <section id="contact">
+    <h2>Let's Build Together</h2>
+    <div class="contact-container">
+      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <p class="hidden">
+          <label>Don’t fill this out if you're human: <input name="bot-field"></label>
+        </p>
+        <input type="hidden" name="form-name" value="contact">
 
-  <div class="card">
-    <h3>AI Events Feed App</h3>
-    <p>React Native + Supabase + NLP powered smart search platform.</p>
-  </div>
+        <input type="text" name="name" placeholder="Full Name" required>
+        <input type="email" name="email" placeholder="Business Email" required>
+        <textarea name="message" rows="5" placeholder="Tell us about your project..." required></textarea>
+        
+        <button type="submit" class="btn" style="width:100%; margin-top:10px;">Send Message</button>
+      </form>
+    </div>
+  </section>
 
-  <div class="card">
-    <h3>PLC Automation System</h3>
-    <p>Cloud-based device monitoring & remote automation control.</p>
-  </div>
+  <footer>
+    <p>© 2026 App Tree Solution | Innovating the Future.</p>
+    <p style="font-size: 12px; margin-top: 10px;">AI • Automation • IoT • Web • Mobile</p>
+  </footer>
 
-</section>
+  <a class="whatsapp" href="https://wa.me/91YOURNUMBER" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
 
-<section id="contact">
-  <h2>Contact Us</h2>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "App Tree Solution",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "India"
+      },
+      "description": "Experts in AI, IoT, and Automation solutions.",
+      "url": "https://apptreesolution.com"
+    }
+  </script>
 
-  <form name="contact" method="POST" data-netlify="true">
-    <input type="hidden" name="form-name" value="contact">
-
-    <input type="text" name="name" placeholder="Your Name" required><br>
-    <input type="email" name="email" placeholder="Your Email" required><br>
-    <textarea name="message" rows="5" placeholder="Your Message" required></textarea><br>
-
-    <button type="submit" class="btn">Send Message</button>
-  </form>
-</section>
-
-<footer>
-  © 2026 App Tree Solution | All Rights Reserved
-</footer>
-
-<a class="whatsapp" href="https://wa.me/91YOURNUMBER" target="_blank">💬</a>
-
-<script>
-tsParticles.load("tsparticles", {
-  background: { color: "#0f0f1b" },
-  particles: {
-    number: { value: 70 },
-    color: { value: "#00f5ff" },
-    links: { enable: true, color: "#00ff99" },
-    move: { enable: true, speed: 1 },
-    size: { value: 2 }
-  }
-});
-</script>
+  <script>
+    // Optimized Particles Config
+    tsParticles.load("tsparticles", {
+      background: { color: "#07070e" },
+      particles: {
+        number: { value: 60, density: { enable: true, value_area: 800 } },
+        color: { value: "#00f5ff" },
+        shape: { type: "circle" },
+        opacity: { value: 0.3, random: true },
+        size: { value: 2, random: true },
+        links: { 
+          enable: true, 
+          distance: 150, 
+          color: "#00ff99", 
+          opacity: 0.2, 
+          width: 1 
+        },
+        move: { 
+          enable: true, 
+          speed: 1.2, 
+          direction: "none", 
+          random: false, 
+          straight: false, 
+          out_mode: "out" 
+        }
+      },
+      interactivity: {
+        events: { onhover: { enable: true, mode: "grab" } },
+        modes: { grab: { distance: 200, line_linked: { opacity: 0.5 } } }
+      },
+      retina_detect: true
+    });
+  </script>
 
 </body>
 </html>
